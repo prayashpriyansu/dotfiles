@@ -1,0 +1,63 @@
+# ─────────────────────────────────────────────
+#  Gruvbox Material (dark) — matches the desktop
+# ─────────────────────────────────────────────
+background = 1d2021
+foreground = d4be98
+cursor-color = ea6962
+cursor-text = 1d2021
+selection-background = 45403d
+selection-foreground = d4be98
+
+# normal
+palette = 0=#3c3836
+palette = 1=#ea6962
+palette = 2=#a9b665
+palette = 3=#d8a657
+palette = 4=#7daea3
+palette = 5=#d3869b
+palette = 6=#89b482
+palette = 7=#d4be98
+# bright
+palette = 8=#928374
+palette = 9=#ea6962
+palette = 10=#a9b665
+palette = 11=#d8a657
+palette = 12=#7daea3
+palette = 13=#d3869b
+palette = 14=#89b482
+palette = 15=#d4be98
+
+# ── Font ──
+font-family = "JetBrainsMono Nerd Font"
+font-style = Regular
+font-size = 9
+
+# ── Window: minimal, subtly frosted (Hyprland blurs the transparency) ──
+window-theme = ghostty
+window-padding-x = 14
+window-padding-y = 14
+window-padding-balance = true
+background-opacity = 0.94
+unfocused-split-opacity = 0.9
+confirm-close-surface = false
+resize-overlay = never
+gtk-toolbar-style = flat
+
+# ── Cursor ──
+cursor-style = block
+cursor-style-blink = false
+
+# ── Shell integration (must be passed together) ──
+shell-integration-features = no-cursor,ssh-env
+
+# ── Keybindings ──
+keybind = shift+insert=paste_from_clipboard
+keybind = control+insert=copy_to_clipboard
+keybind = super+control+shift+alt+arrow_down=resize_split:down,100
+keybind = super+control+shift+alt+arrow_up=resize_split:up,100
+keybind = super+control+shift+alt+arrow_left=resize_split:left,100
+keybind = super+control+shift+alt+arrow_right=resize_split:right,100
+
+# ── Misc ──
+mouse-scroll-multiplier = 0.95
+copy-on-select = true

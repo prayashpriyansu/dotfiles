@@ -1,0 +1,84 @@
+/* Gruvbox Material — minimal, compact launcher */
+
+* {
+    bg0:      #1d2021;
+    bg1:      #282828;
+    bg3:      #45403d;
+    fg:       #d4be98;
+    grey:     #928374;
+    aqua:     #89b482;
+    blue:     #7daea3;
+    red:      #ea6962;
+
+    background-color: transparent;
+    text-color:       @fg;
+    font:             "Iosevka Nerd Font Propo 12";
+}
+
+window {
+    width:            520px;
+    border-radius:    14px;
+    background-color: @bg0;
+    border:           1px;
+    border-color:     @bg3;
+    padding:          8px;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+    spacing:  8px;
+}
+
+inputbar {
+    background-color: @bg1;
+    border-radius:    10px;
+    padding:          10px 14px;
+    spacing:          10px;
+    children:         [ prompt, entry ];
+}
+
+prompt {
+    text-color: @red;
+}
+
+entry {
+    placeholder:       "Search…";
+    placeholder-color: @grey;
+}
+
+listview {
+    lines:        7;
+    columns:      1;
+    scrollbar:    false;
+    fixed-height: true;   /* always reserve room for `lines` rows so the
+                             window never resizes/stretches as you type */
+    dynamic:      false;
+    spacing:      2px;
+}
+
+element {
+    padding:       8px 12px;
+    border-radius: 8px;
+    spacing:       10px;
+}
+
+element normal.normal,
+element alternate.normal {
+    background-color: transparent;
+    text-color:       @fg;
+}
+
+element selected.normal {
+    background-color: rgba(234, 105, 98, 0.16);
+    text-color:       @fg;
+}
+
+element-icon {
+    size:             1.1em;
+    vertical-align:   0.5;
+}
+
+element-text {
+    vertical-align: 0.5;
+    text-color:     inherit;
+}

@@ -1,0 +1,119 @@
+@import "colors/gruvbox-material.css";
+
+* {
+    all: unset;
+    font-family: "Iosevka Nerd Font Propo", monospace;
+    font-size: 13px;
+}
+
+/* Transparent root so the bar reads as floating pills */
+window#waybar {
+    background: transparent;
+    color: @fg;
+}
+
+/* Each cluster is its own rounded pill */
+.modules-left,
+.modules-center,
+.modules-right {
+    background-color: @bg0;
+    border: 1px solid @bg3;
+    border-radius: 99px;
+    padding: 0 6px;
+    margin: 0 4px;
+}
+
+#pulseaudio,
+#battery,
+#clock,
+#network,
+#bluetooth,
+#tray {
+    padding: 3px 9px;
+    color: @fg;
+}
+
+#tray menu {
+    background-color: @bg0;
+    color: @fg;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+#pulseaudio.muted {
+    color: @grey1;
+}
+
+#network.disconnected,
+#bluetooth.off,
+#bluetooth.disabled {
+    color: @grey1;
+}
+
+#bluetooth.connected {
+    color: @red;
+}
+
+#battery.warning {
+    color: @yellow;
+}
+
+#battery.critical {
+    color: @red;
+}
+
+#battery.charging {
+    color: @green;
+}
+
+/* HH  <workspaces>  MM  — tuck the clock halves against the dots */
+#clock.left {
+    padding-right: 6px;
+    color: @grey0;
+}
+
+#clock.right {
+    padding-left: 6px;
+    color: @grey0;
+}
+
+#workspaces {
+    font-size: 0; /* collapse text height; bars sized by min-height */
+    padding: 0 4px;
+    margin: 0;
+}
+
+/* Uniform capsule bars: wide horizontally, thin vertically. Every slot is the
+   same fixed size, so the bar never reflows — the active one is signalled by
+   colour (and a soft glow) only. Vertical margin sets the (thin) height. */
+#workspaces button {
+    background-color: @bg3;
+    color: transparent;
+    min-width: 15px;
+    min-height: 1px;
+    padding: 0;
+    margin: 5px 3px;
+    border-radius: 2px;
+    transition:
+        background-color 250ms ease,
+        box-shadow 250ms ease;
+}
+
+#workspaces button:hover {
+    background-color: @grey2;
+}
+
+#workspaces button.active {
+    background-color: @red;
+    box-shadow: 0 0 5px 0 alpha(@red, 0.32);
+}
+
+#workspaces button.urgent {
+    background-color: @red;
+}

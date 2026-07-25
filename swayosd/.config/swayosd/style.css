@@ -1,0 +1,30 @@
+/* swayosd — Gruvbox Material, minimal */
+window {
+    background: transparent;
+    border-radius: 16px;
+}
+
+#osd {
+    background-color: #1d2021;
+    border: 1px solid #45403d;
+    border-radius: 16px;
+    padding: 12px 16px;
+}
+
+image,
+label {
+    color: #d4be98;
+}
+
+progressbar,
+trough {
+    min-height: 6px;
+    border-radius: 99px;
+    background-color: #45403d;
+}
+
+progress,
+progressbar > trough > progress {
+    background-color: #ea6962;
+    border-radius: 99px;
+}
