@@ -62,12 +62,20 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # Aliases
 alias ls='ls --color'
 
-# Shell integration
-eval "$(fzf --zsh)"
-eval "$(zoxide init --cmd cd zsh)"
 alias zed="zeditor"
 
+# Environment / PATH
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# Go
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin"
+
+# Android
 export ANDROID_HOME="$HOME/Android/Sdk"
 export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/cmdline-tools/latest/bin"
+
+# Shell integration — must stay last, after all PATH changes
+eval "$(fzf --zsh)"
+eval "$(zoxide init --cmd cd zsh)"
